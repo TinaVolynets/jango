@@ -10,6 +10,13 @@
             <button>Купить</button>
         </form>
     </div>
+	    <div>
+        <form method="POST" action="{% url 'stock:sell' stock.pk %}">
+            {% csrf_token %}
+            {{ form }}
+            <button>Продать</button>
+        </form>
+    </div>
     <div>
         <a href="{% url 'stock:list' %}">Назад к списку</a>
     </div>
